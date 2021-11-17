@@ -163,7 +163,8 @@
                 <div class="kratos-status-inner">
                     <div class="kratos-status-content">
                         
-                            <h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><h4 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h4><p>$$<br>前置知识\<br>\sum{d|n}:对n的所有正因子求和\<br>F(n)=\sum{d|n}f(d)\<br>=&gt;f(n)=\sum{d|n}\mu(d)F(\frac{n}{d})\bigstar\<br>=\sum{d|n}\mu(d)F(\frac{n}{d})\<br>=\sum{d|n}\mu(d)\sum{k|\frac{n}{d}}f(k)\<br>=\sum{k|n}f(k)\sum{d|\frac{n}{k}}\mu(d)\<br>\mu(n)\<br>rest\qquad\qquad\qquad\qquad \mu(n)=0\<br>n=1\qquad\qquad\qquad\qquad \mu(n)=1\<br>n=p{1}p{2}…p{k}\qquad \mu(n)=(-1)^k\<br>$$</p>
+                            <hr>
+<h2 id="title-模板"><a href="#title-模板" class="headerlink" title="title:模板"></a>title:模板</h2><h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><h4 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h4><p>$$<br>前置知识\<br>\sum{d|n}:对n的所有正因子求和\<br>F(n)=\sum{d|n}f(d)\<br>=&gt;f(n)=\sum{d|n}\mu(d)F(\frac{n}{d})\bigstar\<br>=\sum{d|n}\mu(d)F(\frac{n}{d})\<br>=\sum{d|n}\mu(d)\sum{k|\frac{n}{d}}f(k)\<br>=\sum{k|n}f(k)\sum{d|\frac{n}{k}}\mu(d)\<br>\mu(n)\<br>rest\qquad\qquad\qquad\qquad \mu(n)=0\<br>n=1\qquad\qquad\qquad\qquad \mu(n)=1\<br>n=p{1}p{2}…p{k}\qquad \mu(n)=(-1)^k\<br>$$</p>
 <h5 id="线性筛莫比乌斯"><a href="#线性筛莫比乌斯" class="headerlink" title="线性筛莫比乌斯"></a>线性筛莫比乌斯</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> prime[N],mu[N],tot;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mulprime</span><span class="params">()</span></span>&#123;</span><br><span class="line">	mu[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;N;++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!mu[i]) prime[++tot]=i,mu[i]=<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=tot;++j)&#123;</span><br><span class="line">			<span class="keyword">if</span>(i*prime[j]&gt;=N || i%prime[j]==<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">			mu[i*prime[j]]=-mu[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>例1</strong>  <a target="_blank" rel="noopener" href="http://poj.org/problem?id=3904">poj3904</a></p>
@@ -215,7 +216,7 @@
                     
                     
                         <span class="pull-right">
-                            <a class="read-more" href="/2021/11/17/sxseven/" title="留言">留言<i class="fa fa-chevron-circle-right"></i></a>
+                            <a class="read-more" href="/2021/11/17/%E6%A8%A1%E6%9D%BF/" title="留言">留言<i class="fa fa-chevron-circle-right"></i></a>
                         </span>
                     
 
